@@ -1,0 +1,10 @@
+service: payment-gateway
+stages:
+  dev:
+    path: environments/dev/
+  qa:
+    path: environments/qa/
+  staging:
+    path: environments/staging/
+  prod:
+    path: environments/prod/
