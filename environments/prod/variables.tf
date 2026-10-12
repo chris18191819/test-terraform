@@ -1,0 +1,12 @@
+variable "environment" {}
+variable "vpc_cidr" {}
+variable "azs" {}
+variable "public_subnets" {}
+variable "private_subnets" {}
+variable "database_subnets" {}
+variable "node_min_size" {}
+variable "node_max_size" {}
+variable "node_desired_size" {}
+variable "instance_types" {}
+variable "db_instance_class" {}
+variable "db_allocated_storage" {}

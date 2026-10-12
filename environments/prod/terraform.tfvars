@@ -1,0 +1,12 @@
+environment = "prod"
+vpc_cidr = "10.3.0.0/16"
+azs = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
+public_subnets = ["10.3.1.0/24", "10.3.2.0/24", "10.3.3.0/24"]
+private_subnets = ["10.3.11.0/24", "10.3.12.0/24", "10.3.13.0/24"]
+database_subnets = ["10.3.21.0/24", "10.3.22.0/24", "10.3.23.0/24"]
+node_min_size = 3
+node_max_size = 10
+node_desired_size = 3
+instance_types = ["m5.large", "m5.xlarge"]
+db_instance_class = "db.r5.xlarge"
+db_allocated_storage = 100

@@ -1,0 +1,12 @@
+environment = "dev"
+vpc_cidr = "10.0.0.0/16"
+azs = ["ap-south-1a", "ap-south-1b"]
+public_subnets = ["10.0.1.0/24", "10.0.2.0/24"]
+private_subnets = ["10.0.11.0/24", "10.0.12.0/24"]
+database_subnets = ["10.0.21.0/24", "10.0.22.0/24"]
+node_min_size = 1
+node_max_size = 2
+node_desired_size = 1
+instance_types = ["t3.medium"]
+db_instance_class = "db.t3.micro"
+db_allocated_storage = 20

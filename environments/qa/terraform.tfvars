@@ -1,0 +1,12 @@
+environment = "qa"
+vpc_cidr = "10.1.0.0/16"
+azs = ["ap-south-1a", "ap-south-1b"]
+public_subnets = ["10.1.1.0/24", "10.1.2.0/24"]
+private_subnets = ["10.1.11.0/24", "10.1.12.0/24"]
+database_subnets = ["10.1.21.0/24", "10.1.22.0/24"]
+node_min_size = 1
+node_max_size = 3
+node_desired_size = 2
+instance_types = ["t3.medium"]
+db_instance_class = "db.t3.small"
+db_allocated_storage = 20
