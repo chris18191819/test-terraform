@@ -3,7 +3,7 @@
 # terrasuite.yaml are only read by the static scanner).
 variable "dev_node_desired_size" {
   type    = number
-  default = 2
+  default = 3
 }
 
 resource "terraform_data" "dev_node_group" {
