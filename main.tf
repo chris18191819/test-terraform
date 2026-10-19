@@ -35,8 +35,9 @@ resource "aws_instance" "e2e_probe" {
   ami           = "ami-0c55b159cbfa81f4a"
   instance_type = "t3.medium"
   tags = {
-    Name = "terracloud-e2e-probe"
-    Env  = "default"
+    Name    = "terracloud-e2e-probe"
+    Env     = "default"
+    Project = "terracloud-e2e"
   }
 }
 
@@ -44,8 +45,9 @@ resource "aws_instance" "e2e_worker" {
   ami           = "ami-0c55b159cbfa81f4a"
   instance_type = "t3.small"
   tags = {
-    Name = "terracloud-e2e-worker"
-    Env  = "default"
+    Name    = "terracloud-e2e-worker"
+    Env     = "default"
+    Project = "terracloud-e2e"
   }
 }
 
@@ -57,7 +59,8 @@ resource "aws_ebs_volume" "e2e_data" {
   type              = "gp3"
   encrypted         = true
   tags = {
-    Name = "terracloud-e2e-data"
-    Env  = "default"
+    Name    = "terracloud-e2e-data"
+    Env     = "default"
+    Project = "terracloud-e2e"
   }
 }
