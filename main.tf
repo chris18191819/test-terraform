@@ -55,7 +55,7 @@ resource "aws_ebs_volume" "e2e_data" {
   availability_zone = "ap-south-1a"
   size              = 20
   type              = "gp3"
-  encrypted         = false
+  encrypted         = true
   tags = {
     Name = "terracloud-e2e-data"
     Env  = "default"
