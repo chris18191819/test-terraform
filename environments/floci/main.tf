@@ -20,10 +20,9 @@ provider "aws" {
 
 resource "aws_s3_bucket" "app" {
   bucket = "terrasuite-test-terraform-floci"
-  tags = {
-    Environment = "floci"
-    Owner      = "platform-team"
-  }
+  # No tags here: the provider reconciles bucket tags through the S3
+  # Control API, whose account-id-prefixed virtual host does not resolve
+  # against a custom endpoint. The instance below carries the tags.
 }
 
 resource "aws_sqs_queue" "work" {
