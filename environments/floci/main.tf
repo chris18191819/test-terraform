@@ -12,6 +12,10 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
+  # The endpoint is an S3-compatible service on a custom host, so the
+  # provider must use path-style addressing (virtual-host addressing would
+  # ask DNS for "<bucket>.<host>", which does not resolve).
+  s3_use_path_style = true
 }
 
 resource "aws_s3_bucket" "app" {
