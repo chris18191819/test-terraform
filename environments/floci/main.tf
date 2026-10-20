@@ -1,6 +1,15 @@
 # floci stage — a live AWS (floci emulator) target for the customer journey.
 # Every resource here is real: the plan creates it, the apply creates it in
 # the cloud, and a later drift check sees it changed out of band.
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.0" # pinned: the apply re-plans and compares digests
+    }
+  }
+}
+
 provider "aws" {
   region = "us-east-1"
 }
@@ -14,9 +23,20 @@ resource "aws_s3_bucket" "app" {
 }
 
 resource "aws_sqs_queue" "work" {
-  name                      = "terrasuite-test-terraform-floci-queue"
+  name                       = "terrasuite-test-terraform-floci-queue"
   visibility_timeout_seconds = 30
   tags = {
+    Environment = "floci"
+  }
+}
+
+# Priced against the catalog (AmazonEC2 / us-east-1), so the budget gate
+# has a real number to compare instead of an unpriced plan.
+resource "aws_instance" "worker" {
+  ami           = "ami-0abcdef1234567890"
+  instance_type = "t3.micro"
+  tags = {
+    Name        = "terrasuite-floci-worker"
     Environment = "floci"
   }
 }
