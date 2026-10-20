@@ -5,7 +5,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 6.0" # pinned: the apply re-plans and compares digests
+      version = "~> 5.0" # pinned: the apply re-plans and compares digests; v5 does not call the S3 Control API on a custom endpoint
     }
   }
 }
