@@ -8,3 +8,5 @@ stages:
     path: environments/staging/
   prod:
     path: environments/prod/
+  floci:
+    path: environments/floci/
