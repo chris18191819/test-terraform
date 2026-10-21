@@ -1,5 +1,7 @@
 service: payment-gateway
 stages:
+  uat:
+    path: environments/uat/
   demo:
     path: environments/demo/
   dev:
