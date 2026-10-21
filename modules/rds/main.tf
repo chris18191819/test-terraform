@@ -15,6 +15,14 @@ module "db" {
   db_name  = "appdb"
   username = "dbadmin"
   port     = 5432
+
+  # The gate's findings: monitoring, Multi-AZ, IAM auth, deletion
+  # protection and performance insights.
+  monitoring_interval                = 60
+  multi_az                           = true
+  iam_database_authentication_enabled = true
+  deletion_protection                = true
+  performance_insights_enabled       = true
   
   manage_master_user_password = true
 
