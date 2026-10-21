@@ -1,5 +1,7 @@
 service: payment-gateway
 stages:
+  sandbox3:
+    path: environments/sandbox3/
   sandbox:
     path: environments/sandbox/
   demo:
