@@ -31,3 +31,5 @@ module "rds" {
   database_subnet_group_name = module.vpc.database_subnet_group_name
   vpc_security_group_id      = module.vpc.default_security_group_id
 }
+
+# e2e-sdlc test trigger marker (safe to remove)
