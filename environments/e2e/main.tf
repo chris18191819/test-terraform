@@ -3,7 +3,7 @@
 # plan and apply it against a fresh checkout.
 variable "replicas" {
   type    = number
-  default = 3
+  default = 4
 }
 
 resource "terraform_data" "e2e_marker" {
