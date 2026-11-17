@@ -1,5 +1,7 @@
 service: payment-gateway
 stages:
+  e2e:
+    path: environments/e2e/
   sandbox3:
     path: environments/sandbox3/
   sandbox:
